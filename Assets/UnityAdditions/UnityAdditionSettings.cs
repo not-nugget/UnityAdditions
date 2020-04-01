@@ -17,10 +17,10 @@
         public static bool SuppressErrors { get; set; } = false;
 
         /// <summary>
-        /// NOT IMPLEMENTED
-        /// Should all classes and extensions use the new (Unity.Mathematics) or the old (UnityEngine.Mathf) mathematic classes? NOTE: The new
-        /// mathematics library is performance-focussed and is being built alongside the new Data-Oriented Technology Stack (DOTS). You must have
-        /// the Mathematics package installed to use the new system
+        /// Should all classes and extensions use Unity.Mathematics as opposed to UnityEngine.Mathf for mathematic and random operations? NOTE: The new
+        /// mathematics library uses a shader-similar syntax, such as float3 instead of Vector3. Thus, conversions may add overhead and decrease
+        /// performance of your application. However, Unity.Mathematics is neccesary in Unity's Burst compiler, and can often produce better
+        /// performance when using it with burst as well. Your mileage may vary.
         /// </summary>
         public static bool UseMathematics { get; set; } = false;
     }

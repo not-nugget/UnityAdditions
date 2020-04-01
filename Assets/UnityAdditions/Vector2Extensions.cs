@@ -1,7 +1,10 @@
-﻿using UnityEngine;
-
-namespace UnityAdditions
+﻿namespace UnityAdditions.Vector2
 {
+    using UnityEngine;
+
+    /// <summary>
+    /// Suite of extension methods for randomizing the x and y values of any vector 2
+    /// </summary>
     public static class Vector2Extensions
     {
         /// <summary>

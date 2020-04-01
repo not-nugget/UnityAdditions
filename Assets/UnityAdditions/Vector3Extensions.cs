@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-
-namespace UnityAdditions
+﻿namespace UnityAdditions.Vector3
 {
+    using UnityEngine;
+
     /// <summary>
     /// Suite of extension methods for randomizing the x, y and z values of any vector 3
     /// </summary>
@@ -24,7 +24,7 @@ namespace UnityAdditions
 
             v.x = (posNegRange.x == 0) ? 0 : Random.Range(-posNegRange.x, posNegRange.x);
             v.y = (posNegRange.y == 0) ? 0 : Random.Range(-posNegRange.y, posNegRange.y);
-            v.y = (posNegRange.y == 0) ? 0 : Random.Range(-posNegRange.y, posNegRange.y);
+            v.z = (posNegRange.z == 0) ? 0 : Random.Range(-posNegRange.z, posNegRange.z);
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace UnityAdditions
             if (xRange == 0 && yRange == 0 && zRange == 0)
             {
                 if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
-                    Debug.LogWarning($"{nameof(Vector3Extensions)}.{nameof(RandomizeValues)} was invoked with {xRange} and {yRange} whos value was Zero, no action was taken");
+                    Debug.LogWarning($"{nameof(Vector3Extensions)}.{nameof(RandomizeValues)} was invoked with xRange:{xRange}, yRange:{yRange} and zRange:{zRange} whos values were Zero, no action was taken");
                 return;
             }
 
