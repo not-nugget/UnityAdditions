@@ -8,7 +8,7 @@ public class PositionRandomizer : MonoBehaviour
     private void Update()
     {
         Vector3 n = new Vector3();
-        n.RandomizeWithin(Collider.bounds);
+        n.RandomizeInside(Collider.bounds);
         transform.position = n;
     }
 }
