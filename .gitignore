@@ -9,8 +9,8 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
-/[Aa]ssets/Materials/**
-/[Aa]ssets/Prefabs/**
+/[Aa]ssets/Materials
+/[Aa]ssets/Prefabs
 /[Aa]ssets/Scenes
 /[Aa]ssets/Scripts
 
