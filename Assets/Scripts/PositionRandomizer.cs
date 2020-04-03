@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityAdditions;
+using UnityAdditions.Vector3;
 
 public class PositionRandomizer : MonoBehaviour
 {

@@ -420,5 +420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 622273924e455c740936e9df804012ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  persistOnSceneTransition: 1
   spawn: {fileID: 2180222190329804253, guid: fb76e4ac7bde5354a95770587ba24c97, type: 3}
-  count: 5
+  count: 5000

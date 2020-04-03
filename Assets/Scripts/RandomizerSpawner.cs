@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityAdditions.Singleton;
 
-public class RandomizerSpawner : MonoBehaviour
+public class RandomizerSpawner : Singleton<RandomizerSpawner>
 {
     public GameObject spawn;
     public int count = 100;
