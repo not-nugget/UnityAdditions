@@ -1,4 +1,4 @@
-﻿namespace UnityAdditions.Vector2
+﻿namespace UnityAdditions.Old.Vector2
 {
     using UnityEngine;
 
@@ -18,7 +18,7 @@
         {
             if (posNegRange == Vector2.zero)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector2Extensions)}.{nameof(RandomizeValues)} was invoked with {posNegRange} whos values were Zero, no action was taken");
                 return;
             }
@@ -38,14 +38,14 @@
         {
             if (lowerBound == upperBound)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector2Extensions)}.{nameof(RandomizeValues)} was invoked with lowerBound:{lowerBound} and upperBound:{upperBound} whos values are equal, no action was taken");
                 return;
             }
 
             if (upperBound.x < lowerBound.x || upperBound.y < lowerBound.y)
             {
-                if (!UnityAdditionSettings.SuppressErrors)
+                if (!UnityAdditionsSettings.SuppressErrors)
                     Debug.LogError($"{nameof(Vector2Extensions)}.{nameof(RandomizeValues)} was invoked with lowerBound:{lowerBound} who possessed a value greater than the corresponding value in upperBound:{upperBound}");
                 return;
             }
@@ -65,7 +65,7 @@
         {
             if (xRange == 0 && yRange == 0)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector2Extensions)}.{nameof(RandomizeValues)} was invoked with {xRange} and {yRange} whos values were Zero, no action was taken");
                 return;
             }
@@ -87,14 +87,14 @@
         {
             if (xLower == xUpper && yLower == yUpper)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector2Extensions)}.{nameof(RandomizeValues)} was invoked with xLower:{xLower}, xUpper:{xUpper}, yLower:{yLower} and yUpper:{yUpper} whos values were Zero, no action was taken");
                 return;
             }
 
             if (xUpper < xLower || yUpper < yLower)
             {
-                if (!UnityAdditionSettings.SuppressErrors)
+                if (!UnityAdditionsSettings.SuppressErrors)
                     Debug.LogError($"{nameof(Vector2Extensions)}.{nameof(RandomizeValues)} was invoked with xLower:{xLower} and yLower:{yLower} who possessed a value greater than the corresponding value of xUpper:{xUpper} or yUpper{yUpper}");
                 return;
             }
@@ -114,7 +114,7 @@
         {
             if (randomizeInside.size == Vector2.zero)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector2Extensions)}.{nameof(RandomizeInside)} was called with a rect:{randomizeInside} who's size was zero, no action was taken");
                 return;
             }
@@ -166,7 +166,7 @@
         {
             if (minMax == Vector2.zero)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector2Extensions)}.{nameof(ClampValuesBetween)} was invoked with minMax:{minMax} whos value was Zero, no action was taken");
                 return;
             }
@@ -186,14 +186,14 @@
         {
             if (min == max)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector2Extensions)}.{nameof(ClampValuesBetween)} was invoked with min:{min} and max:{max} whos values were equal, no action was taken");
                 return;
             }
 
             if (max.x < min.x || max.y < min.y)
             {
-                if (!UnityAdditionSettings.SuppressErrors)
+                if (!UnityAdditionsSettings.SuppressErrors)
                     Debug.LogError($"{nameof(Vector2Extensions)}.{nameof(RandomizeValues)} was invoked with min:{min} who possessed a value greater than the corresponding value in max:{max}");
                 return;
             }
@@ -214,7 +214,7 @@
         {
             if (xMinMax == 0 && yMinMax == 0)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector2Extensions)}.{nameof(RandomizeValues)} was invoked with xMinMax:{xMinMax} and yMinMax:{yMinMax} whos values were Zero, no action was taken");
                 return;
             }
@@ -237,14 +237,14 @@
         {
             if (xMin == xMax && yMin == yMax)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector2Extensions)}.{nameof(RandomizeValues)} was invoked with xMin:{xMin}, xMax:{xMax}, yMin:{yMin} and yMax:{yMax}whos values were Zero, no action was taken");
                 return;
             }
 
             if (xMax < xMin || yMax < yMin)
             {
-                if (UnityAdditionSettings.SuppressErrors)
+                if (UnityAdditionsSettings.SuppressErrors)
                     Debug.LogError($"{nameof(Vector2Extensions)}.{nameof(RandomizeValues)} was invoked with xMin:{xMin} and yMin:{yMin} who possessed a value greater than the corresponding value of xMax:{xMax} or yMax:{yMax}");
                 return;
             }

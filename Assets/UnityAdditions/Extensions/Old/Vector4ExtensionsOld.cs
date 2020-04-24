@@ -1,4 +1,4 @@
-﻿namespace UnityAdditions.Vector4
+﻿namespace UnityAdditions.Old.Vector4
 {
     using UnityEngine;
 
@@ -18,27 +18,16 @@
         {
             if (posNegRange == Vector4.zero)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector4Extensions)}.{nameof(RandomizeValues)} was invoked with {posNegRange} whos value was Zero, no action was taken");
                 return;
             }
 
-            if (UnityAdditionSettings.UseMathematics)
-            {
-                Unity.Mathematics.Random r = new Unity.Mathematics.Random();
+            v.x = (posNegRange.x == 0) ? 0 : UnityEngine.Random.Range(-posNegRange.x, posNegRange.x);
+            v.y = (posNegRange.y == 0) ? 0 : UnityEngine.Random.Range(-posNegRange.y, posNegRange.y);
+            v.z = (posNegRange.z == 0) ? 0 : UnityEngine.Random.Range(-posNegRange.z, posNegRange.z);
+            v.w = (posNegRange.w == 0) ? 0 : UnityEngine.Random.Range(-posNegRange.w, posNegRange.w);
 
-                v.x = (posNegRange.x == 0) ? 0 : r.NextFloat(-posNegRange.x, posNegRange.x);
-                v.y = (posNegRange.y == 0) ? 0 : r.NextFloat(-posNegRange.y, posNegRange.y);
-                v.z = (posNegRange.z == 0) ? 0 : r.NextFloat(-posNegRange.z, posNegRange.z);
-                v.w = (posNegRange.w == 0) ? 0 : r.NextFloat(-posNegRange.w, posNegRange.w);
-            }
-            else
-            {
-                v.x = (posNegRange.x == 0) ? 0 : UnityEngine.Random.Range(-posNegRange.x, posNegRange.x);
-                v.y = (posNegRange.y == 0) ? 0 : UnityEngine.Random.Range(-posNegRange.y, posNegRange.y);
-                v.z = (posNegRange.z == 0) ? 0 : UnityEngine.Random.Range(-posNegRange.z, posNegRange.z);
-                v.w = (posNegRange.w == 0) ? 0 : UnityEngine.Random.Range(-posNegRange.w, posNegRange.w);
-            }
         }
 
         /// <summary>
@@ -53,13 +42,13 @@
         {
             if (lowerBound == upperBound)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector4Extensions)}.{nameof(RandomizeValues)} was invoked with lowerBound:{lowerBound} and upperBound:{upperBound} whos values were equal, no action was taken");
                 return;
             }
             if (upperBound.x < lowerBound.x || upperBound.y < lowerBound.y || upperBound.z < lowerBound.z || lowerBound.w < upperBound.w)
             {
-                if (!UnityAdditionSettings.SuppressErrors)
+                if (!UnityAdditionsSettings.SuppressErrors)
                     Debug.LogError($"{nameof(Vector4Extensions)}.{nameof(RandomizeValues)} was invoked with lowerBound:{lowerBound} who possessed a value greater than the corresponding value in upperBound:{upperBound}");
                 return;
             }
@@ -83,7 +72,7 @@
         {
             if (xRange == 0 && yRange == 0 && zRange == 0)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector4Extensions)}.{nameof(RandomizeValues)} was invoked with xRange:{xRange}, yRange:{yRange}, zRange:{zRange} and wRange:{wRange} whos values were Zero, no action was taken");
                 return;
             }
@@ -113,14 +102,14 @@
         {
             if (xLower == 0 && xUpper == 0 && yLower == 0 && yUpper == 0 && zLower == 0 && zUpper == 0 && wLower == 0 && wUpper == 0)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector4Extensions)}.{nameof(RandomizeValues)} was invoked with xLower:{xLower}, xUpper:{xUpper}, yLower:{yLower}, yUpper:{yUpper}, zLower:{zLower}, zUpper:{zUpper}, wLower:{wLower} and wUpper:{wUpper} whos values were Zero, no action was taken");
                 return;
             }
 
             if (xUpper < xLower || yUpper < yLower || zUpper < zLower || wUpper < wLower)
             {
-                if (!UnityAdditionSettings.SuppressErrors)
+                if (!UnityAdditionsSettings.SuppressErrors)
                     Debug.LogError($"{nameof(Vector4Extensions)}.{nameof(RandomizeValues)} was invoked with xLower:{xLower}, yLower:{yLower}, zLower:{zLower} and wLower:{wLower} who possessed a value greater than the corresponding value of xUpper:{xUpper}, yUpper:{yUpper}, zUpper:{zUpper}, or wUpper:{wUpper}");
                 return;
             }
@@ -179,7 +168,7 @@
         {
             if (minMax == Vector4.zero)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector4Extensions)}.{nameof(ClampValuesBetween)} was invoked with minMax:{minMax} whos value was Zero, no action was taken");
                 return;
             }
@@ -201,14 +190,14 @@
         {
             if (min == max)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector4Extensions)}.{nameof(ClampValuesBetween)} was invoked with min:{min} and max:{max} whos values were equal, no action was taken");
                 return;
             }
 
             if (max.x < min.x || max.y < min.y || max.z < min.z)
             {
-                if (!UnityAdditionSettings.SuppressErrors)
+                if (!UnityAdditionsSettings.SuppressErrors)
                     Debug.LogError($"{nameof(Vector4Extensions)}.{nameof(RandomizeValues)} was invoked with min:{min} who possessed a value greater than the corresponding value in max:{max}");
                 return;
             }
@@ -233,7 +222,7 @@
         {
             if (xMinMax == 0 && yMinMax == 0 && zMinMax == 0 && wMinMax == 0)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector4Extensions)}.{nameof(RandomizeValues)} was invoked with xMinMax:{xMinMax}, yMinMax:{yMinMax}, zMinMax:{zMinMax} and wMinMax:{wMinMax} whos values were Zero, no action was taken");
                 return;
             }
@@ -262,14 +251,14 @@
         {
             if (xMin == xMax && yMin == yMax && zMin == zMax && zMin == zMax)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector4Extensions)}.{nameof(RandomizeValues)} was invoked with xMin:{xMin}, xMax:{xMax}, yMin:{yMin}, yMax:{yMax}, zMin:{zMin}, zMax:{zMax}, wMin:{wMin} and wMax:{wMax} whos values were Zero, no action was taken");
                 return;
             }
 
             if (xMax < xMin || yMax < yMin || zMax < zMin || zMax < zMin)
             {
-                if (UnityAdditionSettings.SuppressErrors)
+                if (UnityAdditionsSettings.SuppressErrors)
                     Debug.LogError($"{nameof(Vector4Extensions)}.{nameof(RandomizeValues)} was invoked with xMin:{xMin}, yMin:{yMin}, zMin:{zMin} and wMax:{zMax} who possessed a value greater than the corresponding value of xMax:{xMax}, yMax:{yMax}, zMax:{zMax} or wMax:{wMax}");
                 return;
             }
@@ -277,7 +266,7 @@
             v.x = (xMin == xMax) ? (xMin == 0) ? (ignoreWhenZero) ? v.x : 0 : xMin : (v.x < xMin) ? xMin : (v.x > xMax) ? xMax : v.x;
             v.y = (yMin == yMax) ? (yMin == 0) ? (ignoreWhenZero) ? v.y : 0 : yMin : (v.y < yMin) ? yMin : (v.y > yMax) ? yMax : v.y;
             v.z = (zMin == zMax) ? (zMin == 0) ? (ignoreWhenZero) ? v.z : 0 : zMin : (v.z < zMin) ? zMin : (v.z > zMax) ? zMax : v.z;
-            v.w = (wMin == wMax) ? (wMin == 0) ? (ignoreWhenZero) ? v.w: 0 : wMin : (v.w < wMin) ? wMin : (v.w > wMax) ? wMax : v.w;
+            v.w = (wMin == wMax) ? (wMin == 0) ? (ignoreWhenZero) ? v.w : 0 : wMin : (v.w < wMin) ? wMin : (v.w > wMax) ? wMax : v.w;
         }
         #endregion
     }

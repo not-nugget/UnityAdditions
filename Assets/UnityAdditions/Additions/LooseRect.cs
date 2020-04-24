@@ -2,7 +2,7 @@
 {
     using System;
     using UnityEngine;
-    using UnityAdditions.Vector2;
+    using UnityAdditions.Old.Vector2;
 
     /// <summary>
     /// Essentially a means of attaching a rect object to a game object. A soft rectangle class that does not require the

@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using UnityAdditions.LooseBounds;
 using UnityAdditions.LooseRect;
-using UnityAdditions.Vector3;
-using UnityAdditions.Vector2;
+using UnityAdditions.Old.Vector3;
+using UnityAdditions.Old.Vector2;
 
 public class LooseTest : MonoBehaviour
 {

@@ -5,7 +5,7 @@
     /// <summary>
     /// Suite of extension methods for operating on a bounds to perform a number of tasks
     /// </summary>
-    public static class RectExtensions
+    public static class RectExt
     {
         /// <summary>
         /// Return a random point within the bounds
@@ -17,8 +17,8 @@
         {
             if (b.size == Vector2.zero)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
-                    Debug.LogWarning($"{nameof(RectExtensions)}.{nameof(GetRandomPointsWithin)} was called on a bounds whose size was Zero. No action was taken.");
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
+                    Debug.LogWarning($"{nameof(RectExt)}.{nameof(GetRandomPointsWithin)} was called on a bounds whose size was Zero. No action was taken.");
                 return Vector2.zero;
             }
 
@@ -42,20 +42,20 @@
         {
             if (b.size == Vector2.zero || numberOfPoints == 0)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
-                    Debug.LogWarning($"{nameof(RectExtensions)}.{nameof(GetRandomPointsWithin)} was called on a bounds:{b} whos size was Zero, or numberOfPoints was equal to Zero. No action was taken.");
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
+                    Debug.LogWarning($"{nameof(RectExt)}.{nameof(GetRandomPointsWithin)} was called on a bounds:{b} whos size was Zero, or numberOfPoints was equal to Zero. No action was taken.");
                 return null;
             }
 
             if (numberOfPoints < 0)
             {
-                if (!UnityAdditionSettings.SuppressErrors)
-                    Debug.LogError($"{nameof(RectExtensions)}.{nameof(GetRandomPointsWithin)} was called with a negative value for numberOfPoints. This is not allowed.");
+                if (!UnityAdditionsSettings.SuppressErrors)
+                    Debug.LogError($"{nameof(RectExt)}.{nameof(GetRandomPointsWithin)} was called with a negative value for numberOfPoints. This is not allowed.");
                 return null;
             }
 
-            if (!suppressIntermediaryWarning && !suppressWarnings && !UnityAdditionSettings.SuppressWarnings && numberOfPoints == 1)
-                Debug.LogWarning($"{nameof(RectExtensions)}.{nameof(GetRandomPointsWithin)} was called with a value of One for numberOfPoints. Why not call {nameof(RectExtensions)}.{nameof(GetRandomPointWithin)} instead?");
+            if (!suppressIntermediaryWarning && !suppressWarnings && !UnityAdditionsSettings.SuppressWarnings && numberOfPoints == 1)
+                Debug.LogWarning($"{nameof(RectExt)}.{nameof(GetRandomPointsWithin)} was called with a value of One for numberOfPoints. Why not call {nameof(RectExt)}.{nameof(GetRandomPointWithin)} instead?");
 
             Vector2[] points = new Vector2[numberOfPoints];
             Vector2 min = b.min, max = b.max;

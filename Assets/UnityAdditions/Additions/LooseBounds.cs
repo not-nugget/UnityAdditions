@@ -1,9 +1,9 @@
-﻿namespace UnityAdditions.LooseBounds
+﻿
+namespace UnityAdditions.LooseBounds
 {
     using System;
     using UnityEngine;
-    using UnityAdditions.Vector3;
-
+    using UnityAdditions.Old.Vector3;
     //TODO SoftBounds editor that allows for click-and-drag editing
 
     /// <summary>

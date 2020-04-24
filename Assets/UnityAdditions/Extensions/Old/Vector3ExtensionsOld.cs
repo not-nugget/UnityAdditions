@@ -1,4 +1,4 @@
-﻿namespace UnityAdditions.Vector3
+﻿namespace UnityAdditions.Old.Vector3
 {
     using UnityEngine;
 
@@ -18,7 +18,7 @@
         {
             if (posNegRange == Vector3.zero)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector3Extensions)}.{nameof(RandomizeValues)} was invoked with {posNegRange} whos value was Zero, no action was taken");
                 return;
             }
@@ -40,13 +40,13 @@
         {
             if (lowerBound == upperBound)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector3Extensions)}.{nameof(RandomizeValues)} was invoked with lowerBound:{lowerBound} and upperBound:{upperBound} whos values were equal, no action was taken");
                 return;
             }
             if (upperBound.x < lowerBound.x || upperBound.y < lowerBound.y || upperBound.z < lowerBound.z)
             {
-                if (!UnityAdditionSettings.SuppressErrors)
+                if (!UnityAdditionsSettings.SuppressErrors)
                     Debug.LogError($"{nameof(Vector3Extensions)}.{nameof(RandomizeValues)} was invoked with lowerBound:{lowerBound} who possessed a value greater than the corresponding value in upperBound:{upperBound}");
                 return;
             }
@@ -68,7 +68,7 @@
         {
             if (xRange == 0 && yRange == 0 && zRange == 0)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector3Extensions)}.{nameof(RandomizeValues)} was invoked with xRange:{xRange}, yRange:{yRange} and zRange:{zRange} whos values were Zero, no action was taken");
                 return;
             }
@@ -95,14 +95,14 @@
         {
             if (xLower == 0 && xUpper == 0 && yLower == 0 && yUpper == 0 && zLower == 0 && zUpper == 0)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector3Extensions)}.{nameof(RandomizeValues)} was invoked with xLower:{xLower}, xUpper:{xUpper}, yLower:{yLower}, yUpper:{yUpper}, zLower:{zLower} and zUpper:{zUpper} whos values were Zero, no action was taken");
                 return;
             }
 
             if (xUpper < xLower || yUpper < yLower || zUpper < zLower)
             {
-                if (!UnityAdditionSettings.SuppressErrors)
+                if (!UnityAdditionsSettings.SuppressErrors)
                     Debug.LogError($"{nameof(Vector3Extensions)}.{nameof(RandomizeValues)} was invoked with xLower:{xLower}, yLower:{yLower}, and zLower:{zLower} who possessed a value greater than the corresponding value of xUpper:{xUpper}, yUpper{yUpper}, or zUpper{zUpper}");
                 return;
             }
@@ -123,7 +123,7 @@
         {
             if (randomizeInside.size == Vector3.zero)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector3Extensions)}.{nameof(RandomizeValues)} was invoked with {randomizeInside} whos size was Zero, no action was taken");
                 return;
             }
@@ -179,7 +179,7 @@
         {
             if (minMax == Vector3.zero)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector3Extensions)}.{nameof(ClampValuesBetween)} was invoked with minMax:{minMax} whos value was Zero, no action was taken");
                 return;
             }
@@ -200,14 +200,14 @@
         {
             if (min == max)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector3Extensions)}.{nameof(ClampValuesBetween)} was invoked with min:{min} and max:{max} whos values were equal, no action was taken");
                 return;
             }
 
             if (max.x < min.x || max.y < min.y || max.z < min.z)
             {
-                if (!UnityAdditionSettings.SuppressErrors)
+                if (!UnityAdditionsSettings.SuppressErrors)
                     Debug.LogError($"{nameof(Vector3Extensions)}.{nameof(RandomizeValues)} was invoked with min:{min} who possessed a value greater than the corresponding value in max:{max}");
                 return;
             }
@@ -230,7 +230,7 @@
         {
             if (xMinMax == 0 && yMinMax == 0 && zMinMax == 0)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector3Extensions)}.{nameof(RandomizeValues)} was invoked with xMinMax:{xMinMax}, yMinMax:{yMinMax} and zMinMax:{zMinMax} whos values were Zero, no action was taken");
                 return;
             }
@@ -256,14 +256,14 @@
         {
             if (xMin == xMax && yMin == yMax && zMin == zMax)
             {
-                if (!suppressWarnings || !UnityAdditionSettings.SuppressWarnings)
+                if (!suppressWarnings || !UnityAdditionsSettings.SuppressWarnings)
                     Debug.LogWarning($"{nameof(Vector3Extensions)}.{nameof(RandomizeValues)} was invoked with xMin:{xMin}, xMax:{xMax}, yMin:{yMin}, yMax:{yMax}, zMin:{zMin} and zMax:{zMax} whos values were Zero, no action was taken");
                 return;
             }
 
             if (xMax < xMin || yMax < yMin || zMax < zMin)
             {
-                if (UnityAdditionSettings.SuppressErrors)
+                if (UnityAdditionsSettings.SuppressErrors)
                     Debug.LogError($"{nameof(Vector3Extensions)}.{nameof(RandomizeValues)} was invoked with xMin:{xMin}, yMin:{yMin}, and zMin:{zMin} who possessed a value greater than the corresponding value of xMax:{xMax}, yMax:{yMax}, or zMax:{zMax}");
                 return;
             }
