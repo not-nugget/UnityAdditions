@@ -55,12 +55,12 @@ namespace UnityAdditions.Singleton
     }
 
     /// <summary>
-    /// Singleton sub-class used to detect when application has quit
+    /// Singleton sub-class used to detect when application has quit. When creating a singleton, extend <c>Singleton&lt;T&gt;</c> instead
     /// </summary>
     public abstract class Singleton : MonoBehaviour
     {
         public static bool Quitting { get; private set; }
-
+        
         private void OnApplicationQuit()
         {
             Quitting = true;

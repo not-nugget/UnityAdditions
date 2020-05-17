@@ -1,4 +1,4 @@
-﻿namespace UnityAdditions.Rect
+﻿namespace UnityAdditions.Extensions
 {
     using UnityEngine;
 
@@ -25,8 +25,8 @@
             Vector2 min = b.min, max = b.max;
             return new Vector2()
             {
-                x = (min.x == max.x) ? min.x : Random.Range(min.x, max.x),
-                y = (min.y == max.y) ? min.y : Random.Range(min.y, max.y),
+                x = (min.x == max.x) ? min.x : UnityEngine.Random.Range(min.x, max.x),
+                y = (min.y == max.y) ? min.y : UnityEngine.Random.Range(min.y, max.y),
             };
         }
 
@@ -63,8 +63,8 @@
             {
                 Vector2 point = new Vector2
                 {
-                    x = (min.x == max.x) ? min.x : Random.Range(min.x, max.x),
-                    y = (min.y == max.y) ? min.y : Random.Range(min.y, max.y),
+                    x = (min.x == max.x) ? min.x : UnityEngine.Random.Range(min.x, max.x),
+                    y = (min.y == max.y) ? min.y : UnityEngine.Random.Range(min.y, max.y),
                 };
 
                 points[i] = point;

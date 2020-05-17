@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vec4Ext : MonoBehaviour
+namespace UnityAdditions.Extensions
 {
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Suite of extension methods that provide further functionality to Vector4 instances
+    /// </summary>
+    public static class Vec4Ext
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

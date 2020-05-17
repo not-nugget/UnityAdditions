@@ -1,18 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Vec3Ext : MonoBehaviour
+namespace UnityAdditions.Extensions
 {
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Suite of extension methods that provide further functionality to Vector3 instances
+    /// </summary>
+    public static class Vec3Ext
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
