@@ -92,9 +92,9 @@ namespace UnityAdditions.Colors
         public bool this[Color c] { get => this == c; }
         #endregion
 
-        #region Colors
         //TODO Add a comment to each... and... every... property........ have fun...
         //TODO Complete List (Left off at C; Completed AB)
+        #region Colors
         public static Colors AbsoluteZero           { get => new Colors(.00f, .28f, .73f); }
         public static Colors AcidGreen              { get => new Colors(.69f, .75f, .10f); }
         public static Colors Aero                   { get => new Colors(.49f, .73f, .91f); }
@@ -221,7 +221,13 @@ namespace UnityAdditions.Colors
         public static Colors BurntAmber             { get => new Colors(.54f, .20f, .14f); }
         public static Colors Byzantine              { get => new Colors(.74f, .20f, .64f); }
         public static Colors Byzantium              { get => new Colors(.44f, .16f, .39f); }
-
+        public static Colors Cadet                  { get => new Colors(.33f, .41f, .45f); }
+        public static Colors CadetBlue              { get => new Colors(.37f, .62f, .63f); }
+        public static Colors CrayolaCadetBlue       { get => new Colors(.66f, .70f, .76f); }
+        public static Colors CadetGrey              { get => new Colors(.57f, .64f, .69f); }
+        public static Colors CadmiumGreen           { get => new Colors(.00f, .42f, .24f); }
+        public static Colors CadmiumOrange          { get => new Colors(.93f, .53f, .18f); }
+        public static Colors CadmiumRed             { get => new Colors(.89f, .00f, .13f); }
         #endregion
 
         #region Methods
@@ -263,8 +269,8 @@ namespace UnityAdditions.Colors
         public override bool Equals(object obj)
         {
             if (obj is null) return false;
-            else if (obj is Colors) return Equals((Colors)obj);
-            else if (obj is Color) return Equals((Color)obj);
+            else if (obj is Colors colors) return Equals(colors);
+            else if (obj is Color color) return Equals(color);
             else return false;
         }
         public override int GetHashCode()
